@@ -21,7 +21,7 @@ import { Space20 } from './shared/spacing';
 import styles, { mergeStyle } from './shared/styles/style';
 
 export default function App() {
-  const [currentTab, setCurrentTab] = useState('ChooseStudent');
+  const [currentTab, setCurrentTab] = useState('Home');
   const [showMenu, setShowMenu] = useState(false);
 
   const offsetValue = useRef(new Animated.Value(0)).current;
