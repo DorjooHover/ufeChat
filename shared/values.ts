@@ -1,0 +1,1 @@
+export const weeklyDays = [ 'mon', 'tue', 'wed', 'thu', 'fri'];
