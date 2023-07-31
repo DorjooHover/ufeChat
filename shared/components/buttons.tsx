@@ -9,16 +9,20 @@ export const MainButton = ({
   color = white,
   borderColor = borderOrange,
   bgColor = orange,
+  paddingVertical = 20,
+  paddingHorizontal = 30,
+  borderRadius = origin,
+  onPress = () => {},
 }) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={onPress}>
       <View
         style={{
           width: '100%',
           backgroundColor: bgColor,
-          paddingHorizontal: 30,
-          paddingVertical: 20,
-          borderRadius: origin,
+          paddingHorizontal: paddingHorizontal,
+          paddingVertical: paddingVertical,
+          borderRadius: borderRadius,
           borderBottomColor: borderColor,
           borderBottomWidth: 4,
           borderStyle: 'solid',

@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Fontisto';
 import imageProfile from '../../assets/images/khngr.jpg';
@@ -11,6 +12,7 @@ import {
   buttonWhite,
   green,
   lightBlue,
+  lightGray,
   orange,
   waterBlue,
   white,
@@ -19,7 +21,7 @@ import { Space12, Space4, origin } from '../spacing';
 import { changes, students } from '../string';
 import styles, { mergeStyle } from '../styles/style';
 import { MainButton } from './buttons';
-export const GroupCard = ({ index }) => {
+export const GroupCard = ({ index, onPress = () => {} }) => {
   let bgColor = blue,
     borderColor = borderBlue,
     textColor = white,
@@ -48,6 +50,7 @@ export const GroupCard = ({ index }) => {
       borderBtnColor = borderOrange;
       break;
   }
+  const navigation = useNavigation();
   return (
     <View
       style={{
@@ -100,6 +103,7 @@ export const GroupCard = ({ index }) => {
           color={textColor}
           bgColor={btnColor}
           borderColor={borderBtnColor}
+          onPress={onPress}
         />
       </View>
     </View>
@@ -149,6 +153,67 @@ export const ChooseGroupCard = ({ index, onPress, selected = false }) => {
         )}
       </View>
     </TouchableOpacity>
+  );
+};
+
+export const ChatCard = ({ reverse = false, name = '', text = '' }) => {
+  return (
+    <View
+      style={{
+        width: '100%',
+
+        marginVertical: 4,
+        flexDirection: reverse ? 'row-reverse' : 'row',
+      }}
+    >
+      <View
+        style={{
+          width: '20%',
+          paddingRight: reverse ? 0 : 16,
+          paddingLeft: !reverse ? 0 : 16,
+        }}
+      >
+        <Image
+          source={imageProfile}
+          style={{
+            width: 55,
+            height: 55,
+            borderRadius: 100,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        />
+      </View>
+
+      <View style={{ width: '80%' }}>
+        <Text
+          style={mergeStyle(styles.labelLarge, {
+            color: '#000',
+            letterSpacing: -0.02,
+          })}
+        >
+          {name}
+        </Text>
+        <Space4 />
+        <View
+          style={{
+            paddingHorizontal: 20,
+            paddingVertical: 16,
+            borderRadius: 15,
+            backgroundColor: lightGray,
+          }}
+        >
+          <Text
+            style={mergeStyle(styles.bodyMedium, {
+              color: '#000',
+              letterSpacing: -0.02,
+            })}
+          >
+            {text}
+          </Text>
+        </View>
+      </View>
+    </View>
   );
 };
 

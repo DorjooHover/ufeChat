@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { FlatList, Image, Text, View } from 'react-native';
-import imageProfile from '../../assets/images/khngr.jpg';
+import { FlatList, Text, View } from 'react-native';
 import { blue, orange, primary, titleGray, waterBlue, white } from '../colors';
 
+import { useNavigation } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Space12, Space15, Space20, Space45, Space6 } from '../spacing';
 import { completed, newChat, semesterOff, today, upComing } from '../string';
@@ -79,9 +79,10 @@ export const Status = () => {
   );
 };
 
-export const Home = () => {
+const Home = () => {
   const groups = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const currentDate = new Date(Date.now());
+  const navigation = useNavigation();
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <Space20 />
@@ -112,18 +113,20 @@ export const Home = () => {
       <FlatList
         scrollEnabled={false}
         data={groups}
-        renderItem={(group) => <GroupCard index={group.index} />}
+        renderItem={(group) => (
+          <GroupCard
+            index={group.index}
+            onPress={() => {
+              console.log('asdf');
+              navigation.navigate('Chatting');
+            }}
+          />
+        )}
         keyExtractor={(group) => group}
       />
-      <Image
-        source={imageProfile}
-        style={{
-          width: '100%',
-          height: 300,
-          borderRadius: 15,
-        }}
-      ></Image>
+
       <View style={{ height: 55 }}></View>
     </ScrollView>
   );
 };
+export default Home;

@@ -31,7 +31,7 @@ import { CustomCard, GroupCard } from './cards';
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 export const groups = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-export const Chats = ({ setCurrentTab }) => {
+const Chats = ({ setCurrentTab }) => {
   const [text, setText] = useState('');
   const [type, setType] = useState('lesson');
   const handleTextChange = (inputText) => {
@@ -110,7 +110,7 @@ export const Chats = ({ setCurrentTab }) => {
     </ScrollView>
   );
 };
-
+export default Chats;
 export const Lesson = ({ text, handleTextChange }) => {
   return (
     <View>

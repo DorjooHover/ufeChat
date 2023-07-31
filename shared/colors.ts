@@ -1,4 +1,7 @@
 export const blue = '#0559FAcc';
+export const blue100 = '#0559FA';
+
+export const darkBlue = '#377AFB';
 export const darkGrayBlue = '#485166';
 export const orange =  '#FF7A4F';
 export const white = '#fff'
@@ -19,3 +22,4 @@ export const borderButtonWhite = '#FBE0FF'
 export const lightGray = '#F1F1F1'
 export const textLightGray = '#545454'
 export const borderLightGray = '#9F9F9F'
+export const inputTextGray = '#B3B3B3'

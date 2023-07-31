@@ -84,6 +84,11 @@ import { origin } from "../spacing";
     fontSize: 13,
     fontWeight: '400',
   },
+  labelSmall: {
+    color: '#000',
+    fontSize: 12,
+    fontWeight: 'bold',
+  },
   //  border
   mainBorder: {
     borderRadius: origin

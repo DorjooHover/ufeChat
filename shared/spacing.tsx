@@ -2,6 +2,7 @@ import { View } from 'react-native';
 
 export const Space4 = () => <View style={{ height: 4, width: 4 }}></View>;
 export const Space6 = () => <View style={{ height: 6, width: 6 }}></View>;
+export const Space8 = () => <View style={{ height: 8, width: 8 }}></View>;
 export const Space15 = () => <View style={{ height: 15, width: 15 }}></View>;
 export const Space12 = () => <View style={{ height: 12, width: 12 }}></View>;
 export const Space20 = () => <View style={{ height: 20, width: 20 }}></View>;
